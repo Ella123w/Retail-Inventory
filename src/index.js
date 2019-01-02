@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 import './assets/styles/style.scss';
+import '../node_modules/bulma';
 
 ReactDOM.render(
   React.createElement(App),

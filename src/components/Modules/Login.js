@@ -1,14 +1,77 @@
 import React, { Component } from 'react';
-
+import logo from '../../assets/images/slogo.png';
+import totallogo from '../../assets/images/totallogo.png';
 class Login extends Component {
+
+    constructor (props){
+        super(props);
+        this.showtextHandler = this.showtextHandler.bind(this);
+        this.state = {
+            type: 'password'            
+
+        };        
+     }
+     showtextHandler(){       
+        console.log("asdfgh");
+        this.setState({
+            type: 'text'
+        })       
+     }
+     
     render() {
         return (
             <div className="App">
-               <div className="">
-               </div>
-          </div>
+                <div className="columns login-block">
+                    <div className="column is-6 login-leftbar">
+                        <div className="has-text-centered leftbar-content">
+                            <div className="image-logo has-text-centered">
+                              <img src={logo} alt="logo"></img>
+                            </div>
+                            <h6>Welcome to</h6>
+                            <h3>TOTAL</h3>
+                        </div>
+                    </div>
+                    <div className="column is-4 login-rightbar">
+                        <div className="image-logo">
+                            <img src={totallogo} alt="logo"></img>
+                        </div>
+                        <h4>Welcome Back,</h4>
+                        <h6>Sign in to continue</h6>
+                        <form className="login-form"> 
+                            <div className="field">
+                                <label className="label">Email</label>
+                                <div className="control has-icons-left has-icons-right">
+                                    <input className="input input_style" type="email" required />
+
+                                </div>
+                                {/* <p class="help is-danger">This email is invalid</p> */}
+                            </div>
+                            <div className="field">
+                                <label className="label">Password</label>
+                                <p className="control has-icons-left">
+                                    <input className="input input_style" type={this.state.type} required />
+                                    <a className="icon is-small is-right" onClick ={this.showtextHandler}>
+                                        <i className="far fa-eye" ></i>
+                                        
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="has-text-right forgot-pwd">
+                              <a>Forgot Password?</a>
+                            </div>
+                            <button className="button login-btn" type="submit">Log in</button>
+                            
+                            
+                        </form>  
+                        <div className="has-text-centered login-signup">
+                              <span>New user?</span><a>Sign up</a>
+                        </div>   
+                    </div>
+                </div>
+
+            </div>
         );
     }
-} 
+}
 
 export default Login;

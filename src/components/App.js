@@ -11,14 +11,16 @@ import DashBoard from './Modules/DashBoard'
 import PurchaseListing from './Modules/purchaseorders/PurchaseListing'
 class App extends Component {
     render() {
-        return ( <div className = "App" >
+        return ( 
+        <div className="App">
             <Router>
             <div>
-            <Route exact path = "/" component = {Login}/> <Route exact path = "/dashboard"  component = {DashBoard}/> 
-            <Route exact path = "/dashboard/purchaseorder"component = {PurchaseListing}/> 
-            <div> 
+                <Route exact path = "/" component = {Login}/> 
+                <Route exact path = "/dashboard"  component = {DashBoard}/> 
+                <Route exact path = "/dashboard/purchaseorder"component = {PurchaseListing}/> 
+            </div> 
             </Router>
-            </div>
+        </div>
         );
     }
 }
