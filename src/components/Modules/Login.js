@@ -5,17 +5,20 @@ class Login extends Component {
 
     constructor (props){
         super(props);
-        this.showtextHandler = this.showtextHandler.bind(this);
         this.state = {
             type: 'password'            
-
         };        
      }
-     showtextHandler(){       
-        console.log("asdfgh");
-        this.setState({
-            type: 'text'
-        })       
+     showtextHandler = () => {   
+        
+        const inputType = this.state.type;
+
+        if(inputType === 'text'){
+            this.setState({type : 'password'});
+        } else {
+            this.setState({type : 'text'});
+        }
+               
      }
      
     render() {
@@ -43,16 +46,17 @@ class Login extends Component {
                                 <div className="control has-icons-left has-icons-right">
                                     <input className="input input_style" type="email" required />
 
-                                </div>
-                                {/* <p class="help is-danger">This email is invalid</p> */}
+                                </div>                                
                             </div>
                             <div className="field">
                                 <label className="label">Password</label>
                                 <p className="control has-icons-left">
                                     <input className="input input_style" type={this.state.type} required />
-                                    <a className="icon is-small is-right" onClick ={this.showtextHandler}>
-                                        <i className="far fa-eye" ></i>
-                                        
+                                    <a className="icon is-small is-right" style={{
+                                        zIndex: '9',
+                                        pointerEvents: 'auto'
+                                    }} onClick={this.showtextHandler}>
+                                       { this.state.type === 'password' ? <i className="far fa-eye" style={{color: '#363636'}}></i> : <i className="far fa-eye-slash" style={{color: '#363636'}}></i>}
                                     </a>
                                 </p>
                             </div>
