@@ -1,5 +1,122 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 
+//Font styles
+$white:  #ffffff;
+$themecolor:#6747cd; 
+$fontbold : bold;
+@mixin bodycenter() {
+	padding: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	height: 102vh;
+  }
 body {
-	font-family: 'Jura', sans-serif;
+	font-family: 'Jura', sans-serif !important;
+}
+.login-block{
+	.image-logo{
+		width:100%;
+		height:100px;
+		img{
+			width: 35px;
+		}
+	}
+	.login-leftbar{
+		background:$themecolor;
+	    @include bodycenter();
+		
+		.leftbar-content{
+			h6{
+			 color: $white;
+			 font-size: 14px;
+			 letter-spacing: 6px;
+			}
+			h3{
+				color: $white;
+				font-weight:$fontbold;
+				font-size:40px;
+			}	
+		}
+	}
+	.login-rightbar{	
+		margin-top:30px;	
+		margin-left: 25px;
+		h4{
+			font-size: 28px;
+			font-weight: 900;
+			letter-spacing: 2px;
+			color: #000;
+		}
+		h6{
+			color: #a7a7a7;
+			font-weight: $fontbold;
+		}
+	}
+	height:100%;
+	overflow: hidden;
+	.login-form{
+		margin-top:50px;
+		.field{
+			padding-bottom:15px;
+			.control.has-icons-left{
+				.icon{
+					right: -5px;
+					top: -5px;
+					i{
+					  cursor:pointer;
+					}
+					
+				}
+			}
+		}
+		label{
+			margin:0 !important;
+		}
+		
+		.input_style{			
+			border: none;
+			box-shadow: none;
+			border-radius: 0;
+			border-bottom: 1px solid #bbb5b5;
+			&:focus,&:active{
+				border-color:$white;
+				box-shadow: none;
+				border-bottom: 1px solid #bbb5b5;
+			}
+		
+		}
+		.control.has-icons-left{
+          .input_style{
+			  padding:0;
+		  }
+		}
+		
+		.forgot-pwd{
+			a{
+				color: #a59e9e;
+				font-weight: $fontbold;
+				letter-spacing: 1px;
+			}
+			
+		}
+		.login-btn{
+			color:$white;
+			background-color:$themecolor;
+			width:100%;
+			padding: 23px;
+   		    margin-top: 20px;
+            line-height: 0px;
+		}
+		
+	}
+	.login-signup{
+	   margin-top:50px;	
+	   a{
+		   color:$themecolor;
+		   font-weight: $fontbold;
+		   padding-left:10px;
+	   }	
+	}
 }
