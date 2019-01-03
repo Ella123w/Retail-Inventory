@@ -19,8 +19,7 @@ class Login extends Component {
             this.setState({type : 'text'});
         }
                
-     }
-     
+     }     
     render() {
         return (
             <div className="App">
