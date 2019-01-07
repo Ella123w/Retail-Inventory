@@ -23,7 +23,8 @@ class Login extends Component {
      
     render() {
         return (
-            <div className="App">
+            <div className="container-fluid">
+
                 <div className="columns login-block">
                     <div className="column is-6 login-leftbar">
                         <div className="has-text-centered leftbar-content">
@@ -34,7 +35,8 @@ class Login extends Component {
                             <h3>TOTAL</h3>
                         </div>
                     </div>
-                    <div className="column is-4 login-rightbar">
+                    <div className="column is-6 login-rightbar">
+                    <div className="column is-10">
                         <div className="image-logo">
                             <img src={totallogo} alt="logo"></img>
                         </div>
@@ -42,16 +44,16 @@ class Login extends Component {
                         <h6>Sign in to continue</h6>
                         <form className="login-form"> 
                             <div className="field">
-                                <label className="label">Email</label>
+                                <label className="label" htmlFor ="email">Email</label>
                                 <div className="control has-icons-left has-icons-right">
-                                    <input className="input input_style" type="email" required />
+                                    <input className="input input_style" name="email" type="email" required />
 
                                 </div>                                
                             </div>
                             <div className="field">
-                                <label className="label">Password</label>
+                                <label className="label" htmlFor ="password">Password</label>
                                 <p className="control has-icons-left">
-                                    <input className="input input_style" type={this.state.type} required />
+                                    <input className="input input_style" name="password" type={this.state.type} required />
                                     <a className="icon is-small is-right" style={{
                                         zIndex: '9',
                                         pointerEvents: 'auto'
@@ -63,7 +65,7 @@ class Login extends Component {
                             <div className="has-text-right forgot-pwd">
                               <a>Forgot Password?</a>
                             </div>
-                            <button className="button login-btn" type="submit">Log in</button>
+                            <button  type="submit" className="button is-primary login-btn">Log in</button>
                             
                             
                         </form>  
@@ -71,9 +73,11 @@ class Login extends Component {
                               <span>New user?</span><a>Sign up</a>
                         </div>   
                     </div>
+                    </div>
                 </div>
 
             </div>
+
         );
     }
 }

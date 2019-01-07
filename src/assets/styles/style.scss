@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 
-//Font styles
-$white:  #ffffff;
-$themecolor:#6747cd; 
-$fontbold : bold;
-@mixin bodycenter() {
-	padding: 0;
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	height: 102vh;
-  }
+@import "./custom/variables.scss";
+@import "./custom/mixins.scss";
+
+
+
+
 body {
-	font-family: 'Jura', sans-serif !important;
+	font-family: $family-primary;
+	font-size:$size-small;
 }
 .login-block{
 	.image-logo{
@@ -24,7 +19,7 @@ body {
 		}
 	}
 	.login-leftbar{
-		background:$themecolor;
+		background:$primary;
 	    @include bodycenter();
 		
 		.leftbar-content{
@@ -103,7 +98,7 @@ body {
 		}
 		.login-btn{
 			color:$white;
-			background-color:$themecolor;
+			background-color:$primary;
 			width:100%;
 			padding: 23px;
    		    margin-top: 20px;
@@ -114,7 +109,7 @@ body {
 	.login-signup{
 	   margin-top:50px;	
 	   a{
-		   color:$themecolor;
+		   color:$primary;
 		   font-weight: $fontbold;
 		   padding-left:10px;
 	   }	
