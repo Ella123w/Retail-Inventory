@@ -9,6 +9,7 @@ import {
 import Login from './Modules/Login'
 import DashBoard from './Modules/DashBoard'
 import PurchaseListing from './Modules/purchaseorders/PurchaseListing'
+import InvoiceTable from './Modules/Invoice/InvoiceTableInput';
 class App extends Component {
     render() {
         return ( 
@@ -18,6 +19,7 @@ class App extends Component {
                 <Route exact path = "/" component = {Login}/> 
                 <Route exact path = "/dashboard"  component = {DashBoard}/> 
                 <Route exact path = "/dashboard/purchaseorder"component = {PurchaseListing}/> 
+                <Route exact path = "/invoice" component = {InvoiceTable} />
             </div> 
             </Router>
         </div>
