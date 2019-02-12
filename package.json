@@ -17,10 +17,12 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "bulma": "^0.7.2",
     "final-form": "^4.11.1",
+    "informed": "^2.0.0",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1",
+    "react": "^16.7.1",
     "react-dom": "^16.4.1",
     "react-final-form": "^4.0.2",
     "react-router-dom": "^4.3.1",
