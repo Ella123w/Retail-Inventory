@@ -8,7 +8,7 @@ import ForgotPassword from "./Modules/ForgotPassword";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App full-height ">
         <Router>
           <div>
             <Route exact path="/" component={Login} />
@@ -20,7 +20,6 @@ class App extends Component {
               path="/dashboard/purchaseorder"
               component={PurchaseListing}
             />
-            <Route exact path="/forgotpassword" component={ForgotPassword} />
           </div>
         </Router>
       </div>

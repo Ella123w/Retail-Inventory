@@ -1,0 +1,15 @@
+.inputalt {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb5b5;
+    padding: 0px 0px !important;
+
+    &:focus,
+    &:active {
+        border-color: $white;
+        box-shadow: none;
+        border-bottom: 1px solid #bbb5b5;
+    }
+
+}

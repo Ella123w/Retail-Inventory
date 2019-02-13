@@ -1,160 +1,100 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 
 @import "./custom/variables.scss";
+@import "./custom/input.scss";
 @import "./custom/mixins.scss";
-
-
 
 
 body {
 	font-family: $family-primary;
-	font-size:$size-small;
-	    overflow-y: auto;
-    overflow-x: hidden;
-    /* width */
-&::-webkit-scrollbar {
-  width: 10px;
+	font-size: $size-small;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+
+	/* width */
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 }
 
-/* Track */
-&::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+.full-height {
+	height: 100%;
 }
 
-/* Handle */
-&::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+.logo-block {
+	background: $primary;
 
-/* Handle on hover */
-&::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+	.image-logo {
+		width: 100%;
+		height: 100px;
 
-}
-
-
-
-
-
-.login-block{
-	margin-bottom: 0px !important;
-	.image-logo{
-		width:100%;
-		height:100px;
-		
-		img{
+		img {
 			width: 35px;
 		}
 	}
-	.login-leftbar{
-		background:$primary;
-	    @include bodycenter();
 
-		
-		.leftbar-content{
-			h6{
-			 color: $white;
-			 font-size: 14px;
-			 letter-spacing: 6px;
-			}
-			h3{
-				color: $white;
-				font-weight:$fontbold;
-				font-size:40px;
-			}	
+	.leftbar-content {
+		@include bodycenter();
+
+		h6 {
+			color: $white;
+			font-size: 14px;
+			letter-spacing: 6px;
 		}
-	}
-	.login-rightbar{	
-		    margin-top: 4em;
-		h4{
-			font-size: 28px;
-			font-weight: 900;
-			letter-spacing: 2px;
-			color: #000;
-		}
-		h6{
-			color: #a7a7a7;
+
+		h3 {
+			color: $white;
 			font-weight: $fontbold;
+			font-size: 40px;
 		}
 	}
-	height:100%;
-	overflow: hidden;
-	.login-form{
-		margin-top:50px;
-		.field{
-			padding-bottom:15px;
-			.control.has-icons-left{
-				.icon{
-					right: -5px;
-					top: -5px;
-					i{
-					  cursor:pointer;
-					}
-					
-				}
-			}
-		}
-		label{
-			margin:0 !important;
-		}
-		
-		.input_style{			
-			border: none;
+}
+
+
+.login-block {
+	margin: 1em;
+
+	h4 {
+		font-size: 28px;
+		font-weight: 900;
+		letter-spacing: 2px;
+		color: #000;
+	}
+
+	h6 {
+		color: #a7a7a7;
+		font-weight: $fontbold;
+	}
+
+	.inputalt {
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		border-bottom: 1px solid #bbb5b5;
+		padding: 0px 0px !important;
+
+		&:focus,
+		&:active {
+			border-color: $white;
 			box-shadow: none;
-			border-radius: 0;
 			border-bottom: 1px solid #bbb5b5;
-			padding: 0px 0px !important;
-			&:focus,&:active{
-				border-color:$white;
-				box-shadow: none;
-				border-bottom: 1px solid #bbb5b5;
-			}
-		
 		}
-		.forgot-pwd{
-			a{
-				color: #a59e9e;
-				font-weight: $fontbold;
-				letter-spacing: 1px;
-			}
-			
-		}
-		.login-btn{
-			color:$white;
-			background-color:$primary;
-			width:100%;
-			padding: 23px;
-   		    margin-top: 20px;
-            line-height: 0px;
-            	&:hover{
-				color:$white;
-			background-color:$primary;
-			width:100%;
-			padding: 23px;
-   		    margin-top: 20px;
-            line-height: 0px;
-		}
-		&:focus{
-          color:$white;
-			background-color:$primary;
-			width:100%;
-			padding: 23px;
-   		    margin-top: 20px;
-            line-height: 0px;
 
-		}
-		}
-	
-
-		
-	}
-	.login-signup{
-	   margin-top:50px;	
-	   a{
-		   color:$primary;
-		   font-weight: $fontbold;
-		   padding-left:10px;
-	   }	
 	}
 }
