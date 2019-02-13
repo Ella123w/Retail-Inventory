@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom"
 import Login from './Modules/Login'
+import Registration from './Modules/Registration'
 import DashBoard from './Modules/DashBoard'
 import PurchaseListing from './Modules/purchaseorders/PurchaseListing'
 import InvoiceTable from './Modules/Invoice/InvoiceTableInput';
@@ -17,12 +18,14 @@ class App extends Component {
             <Router>
             <div>
                 <Route exact path = "/" component = {Login}/> 
+                 <Route exact path = "/registration"  component = {Registration}/> 
                 <Route exact path = "/dashboard"  component = {DashBoard}/> 
                 <Route exact path = "/dashboard/purchaseorder"component = {PurchaseListing}/> 
                 <Route exact path = "/invoice" component = {InvoiceTable} />
             </div> 
             </Router>
         </div>
+
         );
     }
 }

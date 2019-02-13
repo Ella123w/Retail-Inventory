@@ -18,6 +18,9 @@ module.exports = {
         overlay: true,
         open: true,
     },
+     performance: {
+    hints: 'warning'
+  },
     module: {
         rules: [
             {

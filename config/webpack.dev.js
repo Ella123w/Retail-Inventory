@@ -4,31 +4,39 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const mapStyle = process.env.MAP_STYLE === 'true';
 
-module.exports = merge (common, {
+module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        port: 3042,
+        port: 4227,
         historyApiFallback: true,
         overlay: true,
         open: true,
-        stats: 'errors-only'
+        stats: 'errors-only',
+        bonjour: true
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: mapStyle ? "css-loader?sourceMap" : "css-loader" }
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: mapStyle ? "css-loader?sourceMap" : "css-loader"
+                    }
                 ]
             },
             {
                 test: /\.s(a|c)ss$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" },
-                    { loader: "sass-loader" }
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
                 ]
             },
         ]
