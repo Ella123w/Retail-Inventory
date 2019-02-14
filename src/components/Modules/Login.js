@@ -37,19 +37,22 @@ class Login extends Component {
 
   onLogin = event => {
     event.preventDefault();
+    const payload = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(payload);
     var headers = {
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
     };
     axios
-      .post(
-        "http://localhost:82/Invoice-App/public/api/user/login",
-        { email: this.state.email, password: this.state.password },
-        { headers: headers }
-      )
+      .post("http://localhost:82/Invoice-App/public/api/user/login", payload, {
+        headers: headers
+      })
       .then(function(response) {
         console.log();
-        localStorage.setItem("auth-token", response.data.data.token);
-        localStorage.setItem("username", response.data.data.name);
+        // localStorage.setItem("auth-token", response.data.data.token);
+        // localStorage.setItem("username", response.data.data.name);
       })
       .catch(function(error) {
         console.log(error);
@@ -58,7 +61,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="columns is-marginless">
+      <div className="columns is-marginless ">
         <div className="column is-6  is-hidden-mobile logo-block full-height">
           <div className="has-text-centered leftbar-content">
             <div className="image-logo has-text-centered">
@@ -92,12 +95,24 @@ class Login extends Component {
                   onChange={this.handleChangePassword}
                 />
               </div>
-              <div className="column is-10">
-                <button className="button is-primary" onClick={this.onLogin}>
+              <div className="column is-10 ">
+                <button
+                  className="button is-primary primarybtn"
+                  onClick={this.onLogin}
+                >
                   Login
                 </button>
+                <a className="is-pulled-right has-text-grey-dark">
+                  Forgot Password?
+                </a>
               </div>
             </form>
+          </div>
+          <div className="column is-10">
+            <p className="has-text-centered">
+              Your Didn't Register ? -
+              <a className="has-text-grey-dark"> Sign Up</a>
+            </p>
           </div>
         </div>
       </div>

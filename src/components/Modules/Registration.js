@@ -78,13 +78,15 @@ class Registration extends Component {
               </div>
               <div class="columns">
                 <div className="column is-10">
-                  <label>Address</label>
-                  <textarea className="input inputalt" />
+                  <div className="column is-10">
+                    <label>Address</label>
+                    <textarea className="input inputalt" />
+                  </div>
                 </div>
+                <button type="submit" className="button is-primary login-btn">
+                  Log in
+                </button>
               </div>
-              <button type="submit" className="button is-primary login-btn">
-                Log in
-              </button>
             </form>
           </div>
         </div>

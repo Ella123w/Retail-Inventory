@@ -1,5 +1,6 @@
 //font-family
-$family-primary:'Jura', sans-serif !important;
+$family-primary:'Jura',
+sans-serif !important;
 
 //size
 $size-small:0.75rem;
@@ -8,10 +9,11 @@ $size-medium:1.25rem;
 
 
 //colors
-$primary: hsla(254, 57%, 54%, 1); 
-$white:  #ffffff;
+$primary: hsla(254, 57%, 54%, 1);
+$white: #ffffff;
 
-//
+//full
+$fullpercentage: 100%;
 
 //font-weight
 $fontbold : bold;
