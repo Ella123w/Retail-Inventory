@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import logo from "../../assets/images/slogo.png";
 import totallogo from "../../assets/images/totallogo.png";
 import PropTypes from "prop-types";
+import LogoTheme from './LogoTheme'
 import axios from "axios";
-import { Form, Field } from "react-final-form";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // import { userService } from '../../_services';
@@ -62,16 +62,7 @@ class Login extends Component {
   render() {
     return (
       <div className="columns is-marginless ">
-        <div className="column is-6  is-hidden-mobile logo-block full-height">
-          <div className="has-text-centered leftbar-content">
-            <div className="image-logo has-text-centered">
-              <img src={logo} alt="Total-logo" title="Total-logo" />
-              <h6>Welcome to</h6>
-              <h3>TOTAL</h3>
-            </div>
-            <div />
-          </div>
-        </div>
+         <LogoTheme/>
         <div className="column is-6 paddingless login-block">
           <div className="image-logo">
             <img src={totallogo} alt="logo" width="20" height="20" />
@@ -111,7 +102,9 @@ class Login extends Component {
           <div className="column is-10">
             <p className="has-text-centered">
               Your Didn't Register ? -
-              <a className="has-text-grey-dark"> Sign Up</a>
+              <Link to="/registration" className="has-text-grey-dark">
+                Sign Up
+              </Link>
             </p>
           </div>
         </div>

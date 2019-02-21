@@ -8,7 +8,7 @@ import ForgotPassword from "./Modules/ForgotPassword";
 class App extends Component {
   render() {
     return (
-      <div className="App full-height ">
+      <div className="App full-height">
         <Router>
           <div>
             <Route exact path="/" component={Login} />
