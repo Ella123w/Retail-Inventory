@@ -13,20 +13,20 @@ module.exports = merge(common, {
     mode: 'production',
     devtool: 'source-map',
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
-                use: [
-                    { loader: MiniCssExtractPlugin.loader },
-                    { loader: "css-loader" }
-                ]
+                use: [{
+                    loader: "css-loader"
+                }]
             },
             {
                 test: /\.s(a|c)ss$/,
-                use: [
-                    { loader: MiniCssExtractPlugin.loader },
-                    { loader: "css-loader" },
-                    { loader: "sass-loader" }
+                use: [{
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
                 ]
             },
         ]
@@ -44,10 +44,6 @@ module.exports = merge(common, {
             dry: false
         }),
         new OptimizeCssAssetsPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "[name].[hash:8].css",
-            chunkFilename: "[id].[hash:8].css"
-        }),
         new ManifestPlugin(),
         new BundleAnalyzerPlugin({
             analyzerMode: enableBundleAnalyzer === true ? 'static' : 'disabled',

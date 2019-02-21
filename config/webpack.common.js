@@ -13,45 +13,45 @@ module.exports = {
         publicPath: "/"
     },
     devServer: {
-        port: 3042,
+        port: 4227,
         historyApiFallback: true,
         overlay: true,
         open: true,
     },
-     performance: {
-    hints: 'warning'
-  },
+    performance: {
+        hints: 'warning'
+    },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js)$/,
                 exclude: [/node_modules/],
-                use: [{ loader: "babel-loader" }]
+                use: [{
+                    loader: "babel-loader"
+                }]
             },
             {
                 test: /.*\.(gif|png|jp(e*)g)$/i,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            limit: 10000,
-                            name: "images/[name].[ext]"
-                        }
+                use: [{
+                    loader: "url-loader",
+                    options: {
+                        limit: 10000,
+                        name: "images/[name].[ext]"
                     }
-                ]
+                }]
             },
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, '../public', 'index.html'),
-            title:'Progessive Web applications' }),
-             new WorkboxPlugin.GenerateSW({
-                   // these options encourage the ServiceWorkers to get in there fast 
-                   // and not allow any straggling "old" SWs to hang around
-                   clientsClaim: true,
-                 skipWaiting: true
-                
+            title: 'Progessive Web applications'
+        }),
+        new WorkboxPlugin.GenerateSW({
+            // these options encourage the ServiceWorkers to get in there fast 
+            // and not allow any straggling "old" SWs to hang around
+            clientsClaim: true,
+            skipWaiting: true
+
         }),
     ],
     resolve: {
